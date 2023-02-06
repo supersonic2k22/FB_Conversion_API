@@ -8,9 +8,10 @@
 // ------------------------------------------------
 
 // ------------------------------------------------
-//global variables to phone and email fields
+//global variables to phone and email, name fields
 $phone = '';
 $email = '';
+$name = '';
 
 //Show errors
 ini_set('display_errors', 1);
@@ -54,6 +55,7 @@ if (defined('TEST_EVENT_CODE')) {
 
 $submitJson = json_encode($submitJson, JSON_UNESCAPED_SLASHES);
 echo $submitJson;
+
 
 // ------------------------------------------------
 // Set the Facebook Conversions API URL
