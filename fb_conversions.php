@@ -74,7 +74,7 @@ if (defined('TEST_EVENT_CODE')) {
 
 
 $submitJson = json_encode($submitJson, JSON_UNESCAPED_SLASHES);
-echo $submitJson;
+//echo $submitJson;
 
 // ------------------------------------------------
 // Set the Facebook Conversions API URL
