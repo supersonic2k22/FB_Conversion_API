@@ -1,17 +1,29 @@
 <?php
 // ------------------------------------------------
 // This is a Facebook Conversions API PHP Integration
-// Created by: Gilberto C.
-// InteractiveUtopia.com
+// Created by: Roman K.
+// https://romankarb.tech
 // ------------------------------------------------
 // First, we need to start by obtaining the information that will be sent to Facebook
 // ------------------------------------------------
 
 // ------------------------------------------------
-//global variables to phone and email, name fields
+
+//Initial global variables to fields
 $phone = '';
 $email = '';
 $name = '';
+$fbc = "";
+$fbp = "";
+$city = '';
+$state = '';
+$zip_code = '';
+$country = '';
+
+//init submitJson
+$submitJson = [
+    "data" => []
+];
 
 //Show errors
 ini_set('display_errors', 1);
@@ -19,6 +31,11 @@ ini_set('display_errors', 1);
 include('./FB_Conversion_API/config.php');
 //include fields
 include('./FB_Conversion_API/fields/fields.php');
+//include fbc and fbp fields
+include('./FB_Conversion_API/fields/fbp_fbc_fields.php');
+//include geo fields
+include('./FB_Conversion_API/fields/geo_fields.php');
+
 
 
 // Get Current User IP Address
@@ -38,6 +55,9 @@ $actual_link = "https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 // ------------------------------------------------
 // Generate Json code to provide
 
+//require function for events
+require('./FB_Conversion_API/events/functions/SetAdditionalFields.php');
+
 //PageView
 include('./FB_Conversion_API/events/PageView.php');
 
@@ -55,7 +75,6 @@ if (defined('TEST_EVENT_CODE')) {
 
 $submitJson = json_encode($submitJson, JSON_UNESCAPED_SLASHES);
 echo $submitJson;
-
 
 // ------------------------------------------------
 // Set the Facebook Conversions API URL
