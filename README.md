@@ -1,7 +1,7 @@
 # FACEBOOK CONVERSION API 
 ## LIBRARY PHP
 A PHP implementation of the Facebook Conversions API with cURL
-Sending users fields email and phone, with config file. Update of this repository - ```https://github.com/gilbertocortez/facebook_conversions```
+Sending users fields email and phone, fbc, fbp, geo information, with config file. Update of this repository - ```https://github.com/gilbertocortez/facebook_conversions```
 
 To start the work you must to create config file - config.php with these information:
  ```
