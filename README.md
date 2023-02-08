@@ -16,3 +16,5 @@ define('PHONE', 'phone'); //name of the phone field
 define('EMAIL', 'email'); // name of the email field
 define('NAME', 'name'); // name of the first name field
 ```
+
+To support this module - [Buy me a coffee](https://www.buymeacoffee.com/karbivskijQ)
