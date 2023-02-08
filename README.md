@@ -13,4 +13,4 @@ define('THANK_YOU_PAGE', 'your thank you page'); //Page for lead for example - /
 define('REGISTRATION_PAGE', ''); // your registration page, for example - /completeregistration.php
 define('PHONE', 'phone'); //name of the phone field
 define('EMAIL', 'email'); // name of the email field
-define('NAME', 'name'); // name of the first name field```
+define('NAME', 'name'); // name of the first name field ```
