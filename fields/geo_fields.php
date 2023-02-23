@@ -2,11 +2,11 @@
 // First, you need to download the MaxMind GeoIP2 PHP library from https://github.com/MaxMind/GeoIP2-php
 // Include the library in your PHP file
 //Require composer
-require './FB_Conversion_API/vendor/autoload.php';
+require $_SERVER["DOCUMENT_ROOT"].'/FB_Conversion_API/vendor/autoload.php';
 
 // Create a new instance of the MaxMind GeoIP2 reader
 use GeoIp2\Database\Reader;
-$reader = new Reader('./FB_Conversion_API/fields/geoip2data/GeoLite2-City.mmdb');
+$reader = new Reader($_SERVER["DOCUMENT_ROOT"].'/FB_Conversion_API/fields/geoip2data/GeoLite2-City.mmdb');
 
 // Get the IP address of the user visiting your website
 $ip_address = $_SERVER['REMOTE_ADDR'];

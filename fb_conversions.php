@@ -27,14 +27,17 @@ $submitJson = [
 
 //Show errors
 ini_set('display_errors', 1);
+
+//include read file
+include($_SERVER["DOCUMENT_ROOT"] . '/FB_Conversion_API/read.php');
 //include config file
-include('./FB_Conversion_API/config.php');
+include($_SERVER["DOCUMENT_ROOT"] . '/FB_Conversion_API/config.php');
 //include fields
-include('./FB_Conversion_API/fields/fields.php');
+include($_SERVER["DOCUMENT_ROOT"] . '/FB_Conversion_API/fields/fields.php');
 //include fbc and fbp fields
-include('./FB_Conversion_API/fields/fbp_fbc_fields.php');
+include($_SERVER["DOCUMENT_ROOT"] . '/FB_Conversion_API/fields/fbp_fbc_fields.php');
 //include geo fields
-include('./FB_Conversion_API/fields/geo_fields.php');
+include($_SERVER["DOCUMENT_ROOT"] . '/FB_Conversion_API/fields/geo_fields.php');
 
 
 
@@ -52,20 +55,22 @@ if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
 $actual_link = "https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 //echo $actual_link;
 
+//get event id from pixel
+
 // ------------------------------------------------
 // Generate Json code to provide
 
 //require function for events
-require('./FB_Conversion_API/events/functions/SetAdditionalFields.php');
+require($_SERVER["DOCUMENT_ROOT"] . '/FB_Conversion_API/events/functions/SetAdditionalFields.php');
 
 //PageView
-include('./FB_Conversion_API/events/PageView.php');
+include($_SERVER["DOCUMENT_ROOT"] . '/FB_Conversion_API/events/PageView.php');
 
 //Lead
-include('./FB_Conversion_API/events/Lead.php');
+include($_SERVER["DOCUMENT_ROOT"] . '/FB_Conversion_API/events/Lead.php');
 
 //Complete Registration
-include('./FB_Conversion_API/events/CompleteRegistration.php');
+include($_SERVER["DOCUMENT_ROOT"] . '/FB_Conversion_API/events/CompleteRegistration.php');
 
 //Send test event when test code is defined
 if (defined('TEST_EVENT_CODE')) {
@@ -85,7 +90,7 @@ $url = "https://graph.facebook.com/v12.0/" . PIXEL_ID . "/events";
 
 // ------------------------------------------------
 // Use cURL to send the POST request
-include './FB_Conversion_API/inc/objects/curl.class.php';
+include($_SERVER["DOCUMENT_ROOT"] . '/FB_Conversion_API/inc/objects/curl.class.php');
 $_curl_ = new CurlServer();
 $_curl_->post_request($url, $submitJson);
 //var_dump($_curl_->post_request($url, $submitJson));
