@@ -1,5 +1,5 @@
 # FACEBOOK CONVERSION API 
-## LIBRARY PHP
+## PHP PLUGIN
 It is helps to a add conversiona api integration for custom php or html website
 
 A PHP implementation of the Facebook Conversions API with cURL
